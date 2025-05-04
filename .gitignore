@@ -1,0 +1,31 @@
+## User-specific files
+.idea/
+.vscode/
+
+## Windows-specific files
+Thumbs.db
+Desktop.ini
+
+## .NET specific files
+bin/
+obj/
+
+## ASP.NET Core
+wwwroot/
+*.db
+*.bak
+*.log
+
+## Docker
+.docker/
+docker-compose.override.yml
+Dockerfile.debug
+
+## Rider
+.idea/
+
+## UserService-specific files
+out/
+
+# Ignore all environment files except the default one
+*.env

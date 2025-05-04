@@ -1,0 +1,31 @@
+﻿version: '3.8'
+
+services:
+  userdb:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: UserDb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - user_data:/var/lib/postgresql/data
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+  userservice:
+    build:
+      context: ./UserService
+      dockerfile: Dockerfile
+    container_name: userservice
+    ports:
+      - "5001:80"
+    depends_on:
+      - redis
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+volumes:
+  user_data:
