@@ -4,7 +4,7 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
 # Copy only the .csproj file and restore
-COPY UserService.csproj ./
+COPY . ./
 RUN dotnet restore
 
 # Copy everything else and publish

@@ -1,6 +1,43 @@
-@UserService_HostAddress = http://localhost:5063
+@UserService_HostAddress = http://localhost:5063/
 
-GET {{UserService_HostAddress}}/weatherforecast/
+### Get all users
+GET {{UserService_HostAddress}}/api/User
 Accept: application/json
+
+###
+
+### Get user by ID (replace 1 with actual user id)
+GET {{UserService_HostAddress}}/api/User/3
+Accept: application/json
+
+###
+
+### Create a new user
+POST {{UserService_HostAddress}}/api/User
+Content-Type: application/json
+
+{
+  "name": "Pop Doe",
+  "address": "123 Main St",
+  "phoneNumber": "555-1234"
+}
+
+###
+
+### Update user (replace 1 with actual user id)
+PUT {{UserService_HostAddress}}/api/User/3
+Content-Type: application/json
+
+{
+  "id": 3,
+  "name": "Rajan Kumar Yadav",
+  "address": "456 Elm St",
+  "phoneNumber": "555-5678"
+}
+
+###
+
+### Delete user (replace 1 with actual user id)
+DELETE {{UserService_HostAddress}}/api/User/3
 
 ###

@@ -25,6 +25,7 @@ services:
       - "5001:80"
     depends_on:
       - redis
+      - userdb
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
 volumes:
